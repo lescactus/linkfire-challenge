@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkfire-challenge
+  labels:
+    app: linkfire-challenge
+spec:
+  selector:
+    matchLabels:
+      app: linkfire-challenge
+  template:
+    metadata:
+      labels:
+        app: linkfire-challenge
+    spec:
+      containers:
+      - name: linkfire-challenge
+        image: linkfire-challenge
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "8Mi"
+            cpu: "10m"
+          limits:
+            memory: "16Mi"
+            cpu: "100m"
+        readinessProbe:
+          httpGet:
+            path: /rest/ready
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /rest/alive
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 10
+          successThreshold: 1
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
+        runAsNonRoot: true
+      serviceAccountName: linkfire-challenge

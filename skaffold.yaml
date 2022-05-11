@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: linkfire-challenge
+build:
+  local:
+    push: false
+  artifacts:
+  - image: linkfire-challenge
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deploy/deployment.yaml
+    - deploy/service.yaml
+    - deploy/serviceaccount.yaml

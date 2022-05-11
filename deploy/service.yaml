@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: linkfire-challenge
+  labels:
+    app: linkfire-challenge
+spec:
+  type: LoadBalancer
+  selector:
+    app: linkfire-challenge
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080

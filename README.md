@@ -1,4 +1,4 @@
-# Linkfire Challenge [![k8s](https://github.com/lescactus/linkfire-challenge/actions/workflows/k8s.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/k8s.yml) [![Docker Image CI](https://github.com/lescactus/linkfire-challenge/actions/workflows/docker-image.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/docker-image.yml) [![Go](https://github.com/lescactus/linkfire-challenge/actions/workflows/go.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/go.yml)
+# Linkfire Challenge [![k8s](https://github.com/lescactus/linkfire-challenge/actions/workflows/k8s.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/k8s.yml) [![Docker Image CI](https://github.com/lescactus/linkfire-challenge/actions/workflows/docker.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/docker.yml) [![Go](https://github.com/lescactus/linkfire-challenge/actions/workflows/go.yml/badge.svg)](https://github.com/lescactus/linkfire-challenge/actions/workflows/go.yml)
 
 ## Instructions
 
@@ -164,6 +164,7 @@ To deploy to a local Kubernetes cluster, simply run `skaffold run`:
 
 <details>
 <summary>Click to expand</summary>
+
 ```
 $ skaffold run 
 Generating tags...
